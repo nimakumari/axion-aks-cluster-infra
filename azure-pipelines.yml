@@ -23,7 +23,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              workingDirectory: '$(System.DefaultWorkingDirectory)'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/nimakumari.axion-aks-cluster-infra'
               backendServiceArm: 'bhakuaservice'
               backendAzureRmStorageAccountName: 'stogeterra123'
               backendAzureRmContainerName: 'tfstate'
@@ -34,7 +34,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'plan'
-              workingDirectory: '$(System.DefaultWorkingDirectory)'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/nimakumari.axion-aks-cluster-infra'
               environmentServiceNameAzureRM: 'bhakuaservice'
 
           - task: TerraformTask@5
@@ -42,5 +42,5 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'apply'
-              workingDirectory: '$(System.DefaultWorkingDirectory)'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/nimakumari.axion-aks-cluster-infra'
               environmentServiceNameAzureRM: 'bhakuaservice'
