@@ -23,7 +23,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/axion/axion-aks-cluster-infra'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-practice\axion\axion-aks-cluster-infra\environment\dev'
               backendServiceArm: 'bhakuaservice'
               backendAzureRmStorageAccountName: 'stogeterra123'
               backendAzureRmContainerName: 'tfstate'
@@ -34,7 +34,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'plan'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/axion/axion-aks-cluster-infra'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-practice\axion\axion-aks-cluster-infra\environment\dev'
               environmentServiceNameAzureRM: 'bhakuaservice'
 
           - task: TerraformTask@5
@@ -42,5 +42,5 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'apply'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/axion/axion-aks-cluster-infra'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/terraform-practice\axion\axion-aks-cluster-infra\environment\dev'
               environmentServiceNameAzureRM: 'bhakuaservice'
